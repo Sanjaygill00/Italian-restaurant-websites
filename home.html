@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Carousel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #bk {
+            width: 100%;
+            height: 100vh; /* Full screen height */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: scrollBackground 12s infinite; /* Smooth animation across images */
+        }
+
+        @keyframes scrollBackground {
+            0% {
+                background-image: url('C:/Users/LENOVO/OneDrive/Desktop/my web project/pic 7.jpeg'); /* Use relative paths */
+            }
+            33.33% {
+                background-image: url('C:/Users/LENOVO/OneDrive/Desktop/my web project/pic 6.jpeg');
+            }
+            66.66% {
+                background-image: url('C:/Users/LENOVO/OneDrive/Desktop/my web project/pic 5.jpeg');
+            }
+            100% {
+                background-image: url('C:/Users/LENOVO/OneDrive/Desktop/my web project/pic 4.jpeg');
+            }
+        }
+
+        #navbar {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+            width: 250px;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute; /* Fixed on the left side */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #navbar img {
+            width: 120px;
+            border-radius: 50%; /* Circular logo */
+            margin-bottom: 30px;
+        }
+
+        #navbar li {
+            list-style-type: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            padding: 10px 20px;
+            border: 2px solid #ff6600;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #navbar li:hover {
+            background-color: #ff6600;
+            transform: scale(1.1);
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            background-color: #ff6600;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px 0; /* Proper spacing for buttons */
+        }
+
+        button:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h2, h3 {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #work {
+            font-size: 20px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        span {
+            display: block;
+            margin-top: 20px;
+        }
+         /* Location Section Container */
+    #location-container {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        margin: 20px auto;
+        max-width: 300px;
+        animation: fadeIn 1.5s ease-out;
+    }
+
+    /* Location Heading */
+    #location {
+        font-size: 24px;
+        color: #ff6600;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        margin-bottom: 10px;
+        animation: bounceText 2s infinite;
+    }
+
+    /* Address Lines */
+    .address-line {
+        font-size: 18px;
+        color: white;
+        margin: 5px 0;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    /* Address Line Hover Effect */
+    .address-line:hover {
+        transform: scale(1.1);
+        color: #ff6600;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Bouncing Text Animation */
+    @keyframes bounceText {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="bk">
+        <div id="navbar">
+            <!-- Logo placed at the top left -->
+            <img id="imgtop" src="./images/logo.png" alt="Logo">
+            
+            <!-- Navigation links -->
+            <a href="C:\Users\LENOVO\OneDrive\Desktop\my web project\menu.html"><li>MENU</li></a>
+            <a href="C:\Users\LENOVO\OneDrive\Desktop\my web project\about_us.html"><li>ABOUT</li></a>
+            
+            <!-- Stylish button -->
+            <a href="C:\Users\LENOVO\OneDrive\Desktop\my web project\order_online.html"><button>ORDER ONLINE</button></a>
+            
+            <!-- Location -->
+            <h2 id="location">LOCATION</h2>
+            <h3>451 Main Ave</h3>
+            <h3>Norwalk, CT</h3>
+            <h3>(626) 178-3598</h3>
+            
+            <!-- Working Hours -->
+            <span>
+                <h1 id="work">Working Hours</h1>
+                <p style="text-align: center;">Mon-Fri: 09:00 AM - 09:00 PM</p>
+                <p style="text-align: center;">Sat-Sun: 09:00 AM - 11:00 PM</p>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
